@@ -1,19 +1,36 @@
 from tkinter import *
 from PIL import ImageTk, Image
-app = Tk()
 
 
-# Getting Screen Dimensions
-width, height = app.winfo_screenwidth(), app.winfo_screenheight()
+def main():
+   app = Tk()
 
-# Title of the window
-app.title("Time Table Scheduler")
+   label = Label(app, text="Generate Time Table",background="#fff", pady=20, font=('Arial', 30, "bold"))
+   label.pack()
+   
+   btn = Button(app, text="Generate TimeTable", )
+   btn.pack()
 
-# Disabled the ability to resize the window
-app.wm_minsize(width, height)
-app.resizable(height=False, width=False)
+   app.configure(background="white")
 
-# To initialize the window in full screen mode
-app.attributes("-fullscreen", True)
+   # Getting Screen Dimensions
+   width, height = app.winfo_screenwidth(), app.winfo_screenheight()
 
-mainloop()
+   # Title of the window
+   app.title("Time Table Scheduler")
+
+   # Adding AppIcon
+   img = PhotoImage(file="favicon.png")
+   app.iconphoto(False, img)
+
+   # Disabled the ability to resize the window
+   app.wm_minsize(width, height)
+   app.resizable(height=False, width=False)
+
+   # To initialize the window in full screen mode
+   app.attributes("-fullscreen", True)
+
+   mainloop()
+
+if __name__ == "__main__":
+   main()
